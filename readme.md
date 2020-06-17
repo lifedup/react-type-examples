@@ -8,14 +8,14 @@ If I have to look up the type, it will endup here.
 Input - can be any focusable html element
 
 ```
-import React, { FocusEvent } from 'react';
+import { FocusEvent } from 'react';
 const onFocus = (event : FocusEvent<HTMLInputElement>): void => {};
 ```
 ### On change event
 
 Input - can be any onChangable?... html element
 ```
-import React, { ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 const onChange = (event: ChangeEvent<HTMLInputElement>): void => {}
 ```
 ### Keyboard event
