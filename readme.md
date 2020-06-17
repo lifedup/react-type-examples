@@ -1,8 +1,10 @@
 ## Type examples 
 
-Common and not so common React type examples. These will be updated periodically.
+Common and not so common React type examples. 
 
-If I have to look up the type, it will endup here.
+***If the example does not have an import then it is a general html type.***
+
+These will be updated periodically. If I have to look up the type, it will endup here.
 
 ### On focus event
 Input - can be any focusable html element
