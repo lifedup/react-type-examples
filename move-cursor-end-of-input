@@ -1,0 +1,33 @@
+import React, {
+  HTMLProps, useRef, useEffect, useState,
+} from 'react';
+// The effect hook moves the cursor to end of input on toggle of input
+const PasswordInput = ({ type, ...rest }: HTMLProps<HTMLInputElement>): JSX.Element => {
+  const [visible, setVisibility] = useState(false);
+  const ref = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const { current } = ref;
+    if (current) {
+      const { length } = current.value;
+      current.selectionStart = length;
+      current.selectionEnd = length;
+      current.focus();
+    }
+  }, [visible]);
+
+  const onClick = () => setVisibility(!visible);
+
+  return (
+    <>
+      <input
+        ref={ref}
+        {...rest}
+        type={visible ? 'text' : 'password'}
+      />
+      <button type="button" onClick={onClick}>{visible ? 'Hide' : 'Show'}</button>
+    </>
+  );
+};
+
+export default PasswordInput;
