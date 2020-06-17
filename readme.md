@@ -28,6 +28,13 @@ const onChange = (event: ChangeEvent<HTMLInputElement>): void => {}
 
 ```const onClick = (e: MouseEvent): void => {}```
 
+### SVG
+
+```
+import { SVGProps } from 'react';
+const Icon = (props: SVGProps<SVGSVGElement>): JSX.Element => {};
+```
+
 ### useRef
 
 Input - can be any react node
