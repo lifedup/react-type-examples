@@ -1,7 +1,9 @@
-import React, {
-  HTMLProps, useRef, useEffect, useState,
-} from 'react';
-// The effect hook moves the cursor to end of input on toggle of input
+import React, { HTMLProps, useRef, useEffect, useState } from 'react';
+/** 
+* Full real example of how to move the cursor to the end of a standard
+* input. A text area will need to be scrolled.
+* The effect hook moves the cursor to end of input on toggle of input.
+**/
 const PasswordInput = ({ type, ...rest }: HTMLProps<HTMLInputElement>): JSX.Element => {
   const [visible, setVisibility] = useState(false);
   const ref = useRef<HTMLInputElement>(null);
@@ -20,11 +22,7 @@ const PasswordInput = ({ type, ...rest }: HTMLProps<HTMLInputElement>): JSX.Elem
 
   return (
     <>
-      <input
-        ref={ref}
-        {...rest}
-        type={visible ? 'text' : 'password'}
-      />
+      <input ref={ref} {...rest}type={visible ? 'text' : 'password'} />
       <button type="button" onClick={onClick}>{visible ? 'Hide' : 'Show'}</button>
     </>
   );
