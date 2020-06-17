@@ -32,5 +32,5 @@ const onChange = (event: ChangeEvent<HTMLInputElement>): void => {}
 
 Input - can be any react node
 
-```const ref = useRef<HTMLInputElement>();```
+```const ref = useRef<HTMLInputElement>(null);```
 
