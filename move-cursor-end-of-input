@@ -7,10 +7,11 @@ import React, { HTMLProps, useRef, useEffect, useState } from 'react';
 const PasswordInput = ({ type, ...rest }: HTMLProps<HTMLInputElement>): JSX.Element => {
   const [visible, setVisibility] = useState(false);
   const ref = useRef<HTMLInputElement>(null);
+  const clicked = useRef(false);//prevent focus from firing on initial load
 
   useEffect(() => {
     const { current } = ref;
-    if (current) {
+    if (current && clicked.current) {
       const { length } = current.value;
       current.selectionStart = length;
       current.selectionEnd = length;
@@ -18,7 +19,10 @@ const PasswordInput = ({ type, ...rest }: HTMLProps<HTMLInputElement>): JSX.Elem
     }
   }, [visible]);
 
-  const onClick = () => setVisibility(!visible);
+  const onClick = () => {
+    clicked.current = true;
+    setVisibility(!visible);
+  };
 
   return (
     <>
